@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红绿灯</title>
+    <style>
+        .deng {
+            display: grid;
+            grid-template-columns: repeat(3, 50px);
+            grid-template-rows: repeat(1, 50px);
+            grid-gap: 10px;
+        }
+
+        .red,
+        .yellow,
+        .green {
+            border-radius: 50%;
+            background: grey;
+        }
+
+        .red.light {
+            background-color: red;
+        }
+
+        .yellow.light {
+            background-color: yellow;
+        }
+
+        .green.light {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="deng">
+        <div class="deng red"></div>
+        <div class="deng yellow"></div>
+        <div class="deng green"></div>
+    </div>
+    <button>change</button>
+    <script>
+        function wait(timer) {
+            return new Promise((resolve, reject) => {
+                setTimeout(resolve, timer);
+            })
+        }
+
+        function wait2() {
+            return new Promise((resolve, reject) => {
+                document.querySelector('button').addEventListener("click", resolve, { once: true })
+            })
+        }
+
+        function light(className) {
+            document.querySelectorAll('.deng').forEach(value => {
+                value.classList.remove('light');
+            })
+            document.querySelector(`.${className}`).classList.add('light');
+        }
+
+        async function go() {
+            while (true) {
+                light('red');
+                await wait2();
+                light('yellow');
+                await wait2();
+                light('green');
+                await wait2();
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

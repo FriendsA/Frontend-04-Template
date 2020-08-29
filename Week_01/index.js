@@ -117,8 +117,28 @@ function nextTap(flag) {
         let tempArr = itemArr.concat([i]);
         let winner = win(flag, tempArr);
         if (winner) {
-            console.log(winner);
-            return;
+            return i;
         }
     }
+    return null;
+}
+
+
+//最好的选择
+function besWay(flag) {
+    let p = nextTap(flag);
+    if (p !== null) {
+        return {
+            point: p,
+            result: 1,
+        }
+    }
+    let result = -2;
+    let point = null;
+    document.querySelectorAll(".item").forEach((value, key) => {
+        if (value.textContent) {
+            return;
+        }
+        //因为是操作的实体所以没办法模拟下去了，除非创建虚拟dom来使用 ai使用失败了
+    });
 }
