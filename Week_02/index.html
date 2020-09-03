@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地图编辑器</title>
+    <style>
+        #root {
+            display: grid;
+            grid-template-rows: repeat(100, 5px);
+            grid-template-columns: repeat(100, 5px);
+            grid-gap: 1px;
+        }
+
+        .item {
+            background-color: #f2f2f2;
+            /* font-size:12px; */
+        }
+
+        .item.choose {
+            background-color: #333;
+        }
+
+        #btn {
+            margin-bottom: 10px;
+        }
+
+        .green {
+            background-color: rgb(80, 226, 153);
+        }
+        .purple{
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <Button id="btn">clear</Button>
+    <div id="map"></div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
