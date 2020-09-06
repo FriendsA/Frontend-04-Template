@@ -37,10 +37,16 @@ root.addEventListener("contextmenu", function (e) {
 
 //搜索
 async function pathFun(map, start, end) {
-    let table = Object.create(arr);
+    let table = Object.create(null);
     let endPoint = 100 * end[0] + end[1];
     let startPoint = 100 * start[0] + start[1];
-    let queue = [startPoint];
+    let queue = new Sorted([startPoint], (a, b) => distance(a) - distance(b));
+
+    const distance = (p) => {
+        let a = Math.floor(p / 100), b = p % 100;
+
+        return (a - end[0]) ** 2 + (b - end[1]) ** 2;
+    }
 
     async function insert(p, pre) {
         if (p < 0 || p > 9999) {
@@ -50,14 +56,14 @@ async function pathFun(map, start, end) {
             return;
         }
         table[p] = pre;
-        // await sleep(1);
+        await sleep(1);
         document.querySelector("#root").children[p].classList.add("green");
         map[p] = 2;
-        queue.push(p);
+        queue.give(p);
     }
 
     while (queue.length) {
-        let point = queue.shift();
+        let point = queue.take();
         if (point === endPoint) {
             let path = [];
             while (point !== 0) {
@@ -159,5 +165,9 @@ class Sorted {
 
     give(n) {
         this.map.push(n);
+    }
+
+    length() {
+        return this.map.length;
     }
 }
