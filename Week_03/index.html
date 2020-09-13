@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>调色板</title>
+    <style>
+        .box{
+            height: 300px;
+            width: 100%;
+        }
+        .box .box-top{
+            height: 200px;
+            width: 100%;
+        }
+        .box .box-bottom{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box-top" id="box-top"></div>
+        <div class="box-bottom">
+            <input id="r" type="range" min=0 max=255/>
+            <input id="g" type="range" min=0 max=255 />
+            <input id="b" type="range" min=0 max=255 />
+        </div>
+    </div>
+    <script src="./reactive.js"></script>
+</body>
+</html>
