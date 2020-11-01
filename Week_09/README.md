@@ -1,5 +1,8 @@
 ## 学习笔记 ##
 
+### 思考题:为什么 first-letter 可以设置 float 之类的，而 first-line 不行呢？###
+答:我觉得可能是因为first-letter行为上就相当于行内元素的一行对它进行float布局没有意义
+
 ### CSS语法的研究 ###
 * @charset
 * @import
@@ -63,5 +66,18 @@
 * ::first-line
 * ::first-letter
 
-思考题:为什么 first-letter 可以设置 float 之类的，而 first-line 不行呢？
-答:我觉得可能是因为影响布局？
+The ::first-line pseudo-element’s generated box behaves similar to that of an inline-level element, but with certain restrictions. The following CSS properties apply to a ::first-line pseudo-element:
+
+1. all font properties (see [CSS-FONTS-3])
+2. the color and opacity properties (see [CSS-COLOR-3])
+3. all background properties (see [CSS-BACKGROUNDS-3])
+4. any typesetting properties that apply to inline elements (see [CSS-TEXT-3])
+5. all text decoration properties (see [CSS-TEXT-DECOR-3])
+6. the ruby-position property (see [CSS-RUBY-1])
+7. any inline layout properties that apply to inline elements (see [CSS-INLINE-3])
+8. any other properties defined to apply to ::first-line by their respective specifications
+User agents may apply other properties as well except for the following excluded properties:
+
+1. writing-mode
+2. direction
+3. text-orientation
