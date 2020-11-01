@@ -1,5 +1,7 @@
 ## 学习笔记 ##
 
+## Q:为什么first-line 不能设置 text-orientation 呢？
+
 ### 思考题:为什么 first-letter 可以设置 float 之类的，而 first-line 不行呢？###
 答:我觉得可能是因为first-letter行为上就相当于行内元素的一行对它进行float布局没有意义
 
@@ -76,6 +78,7 @@ The ::first-line pseudo-element’s generated box behaves similar to that of an 
 6. the ruby-position property (see [CSS-RUBY-1])
 7. any inline layout properties that apply to inline elements (see [CSS-INLINE-3])
 8. any other properties defined to apply to ::first-line by their respective specifications
+
 User agents may apply other properties as well except for the following excluded properties:
 
 1. writing-mode
