@@ -3,7 +3,7 @@
 ## Q:为什么first-line 不能设置 text-orientation 呢？
 
 ### 思考题:为什么 first-letter 可以设置 float 之类的，而 first-line 不行呢？###
-答:我觉得可能是因为first-letter行为上就相当于行内元素的一行对它进行float布局没有意义
+答:我觉得可能是因为first-letter行为上就相当于行内元素的一行,屏幕大小，字体间距字体大小都会影响该属性的展示，如果设置了float则字体和屏幕大小相关的影响都不会再生效，就矛盾。
 
 ### CSS语法的研究 ###
 * @charset
