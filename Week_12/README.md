@@ -23,7 +23,7 @@
     Children
 ```
 
-| fMarkup set | JS set | JS Change | User Input Change |           |
+| Markup set | JS set | JS Change | User Input Change |           |
 |-------------|--------|-----------|-------------------|-----------|
 | x           | √      | √         | ?                 | property  |
 | √           | √      | √         | ?                 | attribute |
